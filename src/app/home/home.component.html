@@ -1,2 +1,9 @@
 <p>home works!</p>
-<h2>Hello bao</h2>
+<h2>Hello bao {{name}}</h2>
+<input value="{{name}}">
+<br>
+<input [value]="name" title="{{name}}">
+<br>
+<input [value]="name" [title]="'đây là ' + name">
+<h2 *ngIf="age > 16"> lớn hơn 15</h2>
+<h2 *ngIf="age <= 16"> nhỏ hơn hoặc bằng 15</h2>
