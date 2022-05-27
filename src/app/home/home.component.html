@@ -1,9 +1,117 @@
-<p>home works!</p>
-<h2>Hello bao {{name}}</h2>
-<input value="{{name}}">
+
+<!-- Hiển thị tên từ ts ra html -->
+<!-- <h2>Hello bao {{name}}</h2> -->
+<!-- <input value="{{name}}">
+<br> -->
+
+<!-- <input [value]="name" title="{{name}}">
 <br>
-<input [value]="name" title="{{name}}">
-<br>
-<input [value]="name" [title]="'đây là ' + name">
-<h2 *ngIf="age > 16"> lớn hơn 15</h2>
+<input [value]="name" [title]="'đây là ' + name"> -->
+
+<!-- Data Binding - ngIf dùng ngIf trong html -->
+<!-- <h2 *ngIf="age > 16"> lớn hơn 15</h2>
 <h2 *ngIf="age <= 16"> nhỏ hơn hoặc bằng 15</h2>
+<br> -->
+
+<!-- Data Binding - Events binding two-way binding - [(ngModel)]="binding" dùng ngModel + bắt sự kiện html -->
+<!-- <input [(ngModel)]="name" [title]="'đây là ' + name">
+<br>
+<br>
+<button (click)="RestName()">Reset Name</button> -->
+
+<!-- ng-template - viết if then else trong html -->
+<!-- <input [(ngModel)]="age" type="text">
+<div *ngIf="age <=18; then tre ;else gia">
+</div>
+<ng-template #tre><h1>hello tre</h1></ng-template>
+<ng-template #gia><h1>hello gia</h1></ng-template> -->
+
+<!-- Dùng *ngFor cho vòng lặp trong html -->
+<!-- <h1>Trái cây</h1>
+<div *ngFor="let trai of traicay;let i=index">
+    <li> {{i+1}}.&emsp;{{trai}}</li>
+</div> -->
+
+<!-- Dùng ng*For (phần tử là Object) kết hợp chút html/css chút *ngIf, [ngClass] -->
+<!-- <table class="table table-bordered border-primary">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Tên sản phẩn</th>
+        <th scope="col">Giá</th>
+        <th scope="col">Số lượng</th>
+        <th scope="col">Ngày tạo</th>
+        <th scope="col">Trạng thái</th>
+      </tr>
+    </thead>
+    <tbody *ngFor="let trai of lstraicay;let i=index">
+            <tr >
+                <th scope="row">{{i+1}}</th>
+                <td>{{ trai.Name }}</td>
+                <td>{{trai.Price}}</td>
+                <td>
+                    <span [ngClass]="{'so-am': trai.Quantity < 0}">
+                        {{trai.Quantity}}
+                    </span>
+                </td>
+                <td>{{trai.CreateDate}}</td>
+                <td>
+                    <span *ngIf="trai.Active === true">
+                        Còn sẵn hàng
+                    </span>
+                    <span *ngIf="trai.Active === false">
+                          Hết hàng
+                    </span>
+                </td>
+              </tr>
+    </tbody>
+  </table> -->
+
+<!-- Pipe Định dạng dữ liệu trong html cách dùng + viết pipe riêng -->
+<!-- <table class="table table-bordered border-primary">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Tên sản phẩn</th>
+        <th scope="col">Giá</th>
+        <th scope="col">Số lượng</th>
+        <th scope="col">Ngày tạo</th>
+        <th scope="col">Trạng thái</th>
+        <th scope="col">Trạng thái 2</th>
+      </tr>
+    </thead>
+    <tbody *ngFor="let trai of lstraicay;let i=index">
+            <tr >
+                <th scope="row">{{i+1}}</th>
+                <td>{{ trai.Name }}</td>
+                <td>{{trai.Price| currency:'VND'}}</td>
+                <td>
+                    <span [ngClass]="{'so-am': trai.Quantity < 0}">
+                        {{trai.Quantity}}
+                    </span>
+                </td>
+                <td>{{trai.CreateDate | date:'d/M/y HH:mm'}}</td>
+                <td>
+                    <span *ngIf="trai.Active === true">
+                        Còn sẵn hàng
+                    </span>
+                    <span *ngIf="trai.Active === false">
+                          Hết hàng
+                    </span>
+                </td>
+                <td>
+                  <span>
+                    {{trai.Active | onsale | uppercase}}
+                  </span>
+                  
+                </td>
+              </tr>
+    </tbody>
+  </table> -->
+
+  <!-- Cascading ComboBox dùng *ngFor để viết danh sách chọn City (tỉnh/thành) rồi District (Quận/huyện) -->
+  
+
+
+
+
