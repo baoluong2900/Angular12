@@ -6,19 +6,26 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { OnsalePipe } from './onsale.pipe';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+// Cấu hình
+import {HttpClientModule} from '@angular/common/http'
 
 @NgModule({
-  declarations: [
+  declarations: [ 
     AppComponent,
     HomeComponent,
-    OnsalePipe
+    OnsalePipe,
+    PageNotFoundComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     // Import cấu hình ngModel
     BrowserModule, 
-    FormsModule
+    FormsModule,
+
+    // Making HTTP request 
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
