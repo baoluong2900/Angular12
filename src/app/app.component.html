@@ -1,6 +1,17 @@
-<div class="header">
+<!-- <div class="header">
   <h3 class="d-flex justify-content-center"> Angular 12</h3>
   <router-outlet></router-outlet>
   <h1>Hello world</h1>
 <app-home></app-home>
-</div>
+</div> -->
+
+<h1>Angular Router App</h1>
+<!-- This nav gives you links to click, which tells the router which route to use (defined in the routes constant in  AppRoutingModule) -->
+<nav>
+  <ul>
+    <li><a routerLink="/home" routerLinkActive="active">First Component</a></li>
+    <li><a routerLink="/page-not-found" routerLinkActive="active">Second Component</a></li>
+  </ul>
+</nav>
+<!-- The routed views render in the <router-outlet>-->
+<router-outlet></router-outlet>

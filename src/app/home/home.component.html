@@ -110,7 +110,40 @@
   </table> -->
 
   <!-- Cascading ComboBox dùng *ngFor để viết danh sách chọn City (tỉnh/thành) rồi District (Quận/huyện) -->
-  
+  <!-- <select name="cars" id="cars">
+    <option value="1">Mèo</option>
+    <option value="2">Gà</option>
+    <option value="3">Bò</option>
+    <option value="4">Vịt</option>
+  </select>
+  <br>
+  <br>
+  Động vật:
+  <select id="city" (change)="changeCity($event)">
+    <option value="0" disabled selected>Chọn động vật</option>
+    <option  *ngFor="let item of animal" value="{{item.city}}">{{item.city}}</option>
+  </select>
+  <br>
+  <br>
+  Loại động vật
+  <select id="district">
+    <option value="0" disabled selected>Chọn loại động vật</option>
+    <option  *ngFor="let item of districts" value="{{item}}">{{item}}</option>
+  </select> -->
+
+  <!-- ngSwitch Dùng cho sự lựa chọn trong HTMl -->
+  <ul [ngSwitch]="loginName">
+    <li *ngSwitchCase="'user'">
+      <p>User is logged in..</p>
+    </li>
+    <li *ngSwitchCase="'admin'">
+      <p>a dmin is logged in..</p>
+      <app-page-not-found></app-page-not-found>
+    </li>
+    <li *ngSwitchDefault>
+      <p>Please choose login name</p>
+    </li>
+  </ul>
 
 
 

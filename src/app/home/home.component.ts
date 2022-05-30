@@ -8,6 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
   public name ='Hello bao';
+  public loginName ='admin';
   constructor() { }
 	public age =25;
   public RestName() {
@@ -26,9 +27,48 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void {
     console.log('traicay = ', this.traicay)
     console.log('lstraicay = ', this.lstraicay)
+    console.log('lsMeo = ', this.animal)
+  }
+  public animal = [
+  // {city: 'Chọn thành phố', district: []},
+  {
+    city: 'Mèo',
+    district: [
+      'Mèo ba tư'
+      ,'Mèo lông chân ngắn'
+      , 'Mèo ai cập'
+      , 'Mèo việt nam'
+    ],
+  },
+  {
+    city: 'Chó',
+    district: [
+      'Chó ba tư'
+      ,'Chó lông chân ngắn'
+      , 'Chó ai cập'
+      , 'Chó việt nam'
+    ],
+  },
+];
+public districts: string[]= [];
+public changeCity(event: any) {
+  const city = event.target.value;
+  if(!city) {
+    return;
+  }
+  else {
+    console.log('event',city);
   }
 
+  // Cách 1:
+  // const search = this.animal.filter((data) => data.city === city);
+  // console.log('search',search);
+  // if(search && search.length >0) {
+  //   this.districts = search[0].district;
+  // }
 
+  // Cách 2:
+  this.districts = this.animal.find((data) => data.city === city)?.district || [];
 
-
+}
 }
