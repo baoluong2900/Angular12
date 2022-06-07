@@ -8,23 +8,27 @@ import { HomeComponent } from './home/home.component';
 import { OnsalePipe } from './onsale.pipe';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 // Cấu hình
-import {HttpClientModule} from '@angular/common/http'
+import {HttpClientModule} from '@angular/common/http';
+import { HighLightDirective } from './Directvies/high-light.directive';
+
 
 @NgModule({
-  declarations: [ 
+  declarations: [
     AppComponent,
     HomeComponent,
     OnsalePipe,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    HighLightDirective,
+
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     // Import cấu hình ngModel
-    BrowserModule, 
+    BrowserModule,
     FormsModule,
 
-    // Making HTTP request 
+    // Making HTTP request
     HttpClientModule
   ],
   providers: [],

@@ -9,6 +9,7 @@ import { Component, OnInit } from '@angular/core';
 export class AppComponent implements OnInit{
   title = 'Project';
   users:any;
+  public color= 'red';
    constructor (private http: HttpClient) {}
 
    ngOnInit(): void {
@@ -23,4 +24,4 @@ export class AppComponent implements OnInit{
       }
     )
   }
-} 
+}
